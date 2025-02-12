@@ -1,6 +1,3 @@
-Here’s a well-structured `README.md` for your project:  
-
-```markdown
 # 🎨 Frontend Projects  
 
 This repository contains various frontend design projects, ranging from easy to advanced levels. Each project is organized in separate folders for better accessibility and management.  
@@ -21,15 +18,14 @@ This repository contains various frontend design projects, ranging from easy to 
 ## 🛠 Technologies Used  
 - **HTML5**  
 - **CSS3 & Tailwind CSS**  
-- **JavaScript**
--**tailwind**
+- **JavaScript**  
 - **Next.js (for some projects)**  
 
 ## 📜 How to Use  
 1. Clone the repository:  
    ```sh
    git clone https://github.com/tamilm08/FRONTEND-PROJECTS.git
-   ```
+
 2. Navigate to a project folder:  
    ```sh
    cd FRONTEND-PROJECTS/Project_Name
