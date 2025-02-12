@@ -1,6 +1,6 @@
 Here's a **README.md** file for your **Ticket Management System** project:  
 
-view live page:https://tamilm08.github.io/FRONTEND-PROJECTS/TicketManagement_System/
+
 ---
 
 ### 🚌 Ticket Management System  
