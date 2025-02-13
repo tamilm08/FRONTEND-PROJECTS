@@ -1,5 +1,3 @@
-Here's a **README.md** file for your **Ticket Management System** project:  
-
 
 ---
 
