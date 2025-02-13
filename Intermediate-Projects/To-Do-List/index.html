@@ -7,20 +7,24 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
 </head>
-<body class="bg-gradient-to-r from-blue-500 to-purple-700 min-h-screen flex items-center justify-center">
-    <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
-        <h1 class="text-2xl font-bold text-center text-gray-700 mb-4">To-Do List</h1>
-        <div class="flex gap-2">
-            <input type="text" id="taskInput" placeholder="Task..." class="flex-1 p-2 border rounded-lg focus:ring-2 focus:ring-blue-400">
-            <input type="date" id="taskDate" class="p-2 border rounded-lg">
-            <select id="taskPriority" class="p-2 border rounded-lg">
-                <option value="Low">Low</option>
-                <option value="Medium">Medium</option>
-                <option value="High">High</option>
-            </select>
-            <button onclick="addTask()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">Add</button>
+<body class="bg-gradient-to-br from-blue-500 to-purple-700 min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-6">
+        <h1 class="text-3xl font-extrabold text-center text-gray-700 mb-6">✅ To-Do List</h1>
+        <div class="space-y-3">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <input type="text" id="taskInput" placeholder="Task..." class="flex-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400">
+                <input type="date" id="taskDate" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400">
+            </div>
+            <div class="flex gap-3">
+                <select id="taskPriority" class="flex-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+                <button onclick="addTask()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg shadow-md transition duration-300">Add</button>
+            </div>
         </div>
-        <ul id="taskList" class="mt-4 space-y-2 border p-2 rounded-lg bg-gray-50"></ul>
+        <ul id="taskList" class="mt-6 space-y-3 border p-4 rounded-lg bg-gray-100 shadow-md"></ul>
     </div>
     <script src="script.js"></script>
 </body>
