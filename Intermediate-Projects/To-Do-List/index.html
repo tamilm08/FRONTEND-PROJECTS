@@ -1,31 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>To-Do List Application</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body
-        class="bg-gradient-to-r from-blue-500 to-purple-700 min-h-screen flex items-center justify-center">
 
-        <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
-            <h1 class="text-2xl font-bold text-center text-gray-700 mb-4">To-Do
-                List  </h1>
+document.addEventListener("DOMContentLoaded", loadTasks);
+document.getElementById("taskInput").addEventListener("keypress", function (event) {
+    if (event.key === "Enter") addTask();
+});
 
-            <div class="flex gap-2">
-                <input type="text" id="taskInput"
-                    placeholder="Add a new task..."
-                    class="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
-                <button onclick="addTask()"
-                    class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md transition duration-300">
-                    Add
-                </button>
-            </div>
+function addTask() {
+    const taskInput = document.getElementById("taskInput");
+    const taskList = document.getElementById("taskList");
+    const taskText = taskInput.value.trim();
 
-            <ul id="taskList" class="mt-4 space-y-2"></ul>
-        </div>
+    if (taskText === "") return;
 
-    </body>
-    <script src="script.js"></script>
-</html>
+    // Prevent duplicate tasks
+    if ([...taskList.children].some(li => li.textContent.includes(taskText))) {
+        alert("Task already exists!");
+        return;
+    }
+
+    const li = document.createElement("li");
+    li.className = "flex justify-between items-center bg-gray-100 p-2 rounded-lg shadow-sm";
+    li.innerHTML = `
+        <span class="text-gray-700">${taskText}</span>
+        <button onclick="removeTask(this)" class="!text-red-500 hover:!text-red-700">✖</button>
+    `;
+
+    taskList.appendChild(li);
+    saveTasks();
+    taskInput.value = "";
+    taskInput.focus();
+}
+
+function removeTask(button) {
+    button.parentElement.remove();
+    saveTasks();
+}
+
+function saveTasks() {
+    const tasks = [...document.querySelectorAll("#taskList li span")].map(span => span.textContent);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function loadTasks() {
+    const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    savedTasks.forEach(taskText => {
+        const taskInput = document.getElementById("taskInput");
+        taskInput.value = taskText;
+        addTask();
+    });
+}
