@@ -34,6 +34,13 @@ This repository contains **intermediate-level** frontend projects built using **
 - Show **total balance and transaction history**
 - Data stored in **local storage**
 
+### 5️⃣ Ticket Management System
+**Features:**
+- Create, update, and delete **support tickets**
+- Assign tickets to different **categories and priorities**
+- Track ticket **status (Open, In Progress, Resolved)**
+- Store tickets in **local storage** for persistence
+
 ## 📂 Installation & Setup
 1. Clone the repository:
    ```sh
